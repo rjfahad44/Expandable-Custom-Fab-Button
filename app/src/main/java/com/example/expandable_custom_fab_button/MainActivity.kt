@@ -59,7 +59,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun expandFab() {
+        binding.transparentBg.startAnimation(fromBottomBgAnim)
+        binding.mainFabBtn.startAnimation(rotateClockWiseFabAnim)
+        binding.galleryFabBtnLayout.startAnimation(fromBottomFabAnim)
+        binding.shareFabBtnLayout.startAnimation(fromBottomFabAnim)
+        binding.sendFabBtnLayout.startAnimation(fromBottomFabAnim)
 
+        isExpanded = !isExpanded
     }
 
     private fun shrinkFab() {
