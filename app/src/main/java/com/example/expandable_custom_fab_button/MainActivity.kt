@@ -1,10 +1,13 @@
 package com.example.expandable_custom_fab_button
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import com.example.expandable_custom_fab_button.databinding.ActivityMainBinding
+import java.time.Duration
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,14 +39,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.mainFabBtn.setOnClickListener {
-
             if (isExpanded) {
                 shrinkFab()
             } else {
                 expandFab()
             }
-
         }
+
+        binding.galleryFabBtnLayout.setOnClickListener {
+            "Gallery".toast(this)
+        }
+        binding.shareFabBtnLayout.setOnClickListener {
+            "Share".toast(this)
+        }
+        binding.sendFabBtnLayout.setOnClickListener {
+            "Send".toast(this)
+        }
+
     }
 
     private fun expandFab() {
@@ -55,4 +67,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+}
+
+fun String.toast(ctx: Context,duration: Int = Toast.LENGTH_SHORT){
+    Toast.makeText(ctx, this, duration).show()
 }
