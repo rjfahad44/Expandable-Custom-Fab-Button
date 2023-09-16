@@ -36,12 +36,12 @@
             android:layout_marginBottom="12dp"
             android:backgroundTint="@color/green"
             android:contentDescription="@string/app_name"
+            android:src="@drawable/baseline_add_24"
             android:tint="@color/green"
             app:backgroundTint="@color/green"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/baseline_add_24"
-            android:src="@drawable/baseline_add_24"
             app:tint="@color/white" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -58,14 +58,14 @@
                 android:layout_marginBottom="12dp"
                 android:backgroundTint="@color/green"
                 android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_collections_24"
                 android:tint="@color/green"
                 android:visibility="invisible"
                 app:backgroundTint="@color/green"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:srcCompat="@drawable/baseline_collections_24"
-                android:src="@drawable/baseline_collections_24"
                 app:tint="@color/white"
                 tools:visibility="visible" />
 
@@ -102,15 +102,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:backgroundTint="@color/green"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_share_24"
                 android:tint="@color/green"
                 android:visibility="invisible"
                 app:backgroundTint="@color/green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/baseline_share_24"
-                android:src="@drawable/baseline_share_24"
                 app:tint="@color/white"
                 tools:visibility="visible" />
 
@@ -149,14 +149,14 @@
                 android:layout_marginBottom="12dp"
                 android:backgroundTint="@color/green"
                 android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_send_24"
                 android:tint="@color/green"
                 android:visibility="invisible"
                 app:backgroundTint="@color/green"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:srcCompat="@drawable/baseline_send_24"
-                android:src="@drawable/baseline_send_24"
                 app:tint="@color/white"
                 tools:visibility="visible" />
 

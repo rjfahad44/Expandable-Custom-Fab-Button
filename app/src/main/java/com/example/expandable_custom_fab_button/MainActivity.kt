@@ -1,8 +1,10 @@
 package com.example.expandable_custom_fab_button
 
 import android.content.Context
+import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private val toBottomBgAnim: Animation by lazy {
         AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim)
     }
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -80,6 +82,19 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (ev?.action == MotionEvent.ACTION_DOWN) {
+            if (isExpanded) {
+                val outRect = Rect()
+                binding.fabConstraint.getGlobalVisibleRect(outRect)
+                if (!outRect.contains(ev.rawX.toInt(), ev.rawY.toInt())) {
+                    shrinkFab()
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
     override fun onBackPressed() {
         if (isExpanded) {
             shrinkFab()
@@ -91,6 +106,6 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-fun String.toast(ctx: Context,duration: Int = Toast.LENGTH_SHORT){
+fun String.toast(ctx: Context, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(ctx, this, duration).show()
 }
