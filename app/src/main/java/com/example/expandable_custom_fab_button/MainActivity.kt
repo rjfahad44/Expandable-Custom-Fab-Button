@@ -34,5 +34,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.mainFabBtn.setOnClickListener {
+
+            if (isExpanded) {
+                shrinkFab()
+            } else {
+                expandFab()
+            }
+
+        }
     }
+
+    private fun expandFab() {
+
+    }
+
+    private fun shrinkFab() {
+
+    }
+
+
 }
