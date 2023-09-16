@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import android.window.OnBackInvokedDispatcher
 import com.example.expandable_custom_fab_button.databinding.ActivityMainBinding
 import java.time.Duration
 
@@ -76,6 +77,15 @@ class MainActivity : AppCompatActivity() {
         binding.sendFabBtnLayout.startAnimation(toBottomFabAnim)
 
         isExpanded = !isExpanded
+    }
+
+
+    override fun onBackPressed() {
+        if (isExpanded) {
+            shrinkFab()
+        } else {
+            super.onBackPressed()
+        }
     }
 
 
