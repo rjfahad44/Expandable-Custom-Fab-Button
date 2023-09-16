@@ -63,7 +63,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun shrinkFab() {
+        binding.transparentBg.startAnimation(toBottomBgAnim)
+        binding.mainFabBtn.startAnimation(rotateAntiClockWiseFabAnim)
+        binding.galleryFabBtnLayout.startAnimation(toBottomFabAnim)
+        binding.shareFabBtnLayout.startAnimation(toBottomFabAnim)
+        binding.sendFabBtnLayout.startAnimation(toBottomFabAnim)
 
+        isExpanded = !isExpanded
     }
 
 
